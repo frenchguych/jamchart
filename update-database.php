@@ -82,7 +82,7 @@ while (true) {
         echo $result->id . " ";
 
         $database->insert('tracks', [
-            "date_retreived" => $now->format('Y-m-d'),
+            "date_retrieved" => $now->format('Y-m-d'),
             "id" => $result->id,
             "name" => $result->name,
             "duration" => $result->duration,
@@ -122,7 +122,7 @@ while (true) {
         foreach($tags as $type => $values) {
             foreach($values as $value) {
                 $dbtags[] = [
-                    "date_retreived" => $now->format('Y-m-d'),
+                    "date_retrieved" => $now->format('Y-m-d'),
                     "track_id" => $result->id,
                     "type" => $type,
                     "value" => $value
