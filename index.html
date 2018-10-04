@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="jamchart.css">
+    <title>JamChart dashboard</title>
+</head>
+<body>
+<div class="hidden">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1>Chart for <span id="chart_date"></span></h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <h3>Best entry :</h3>
+            </div>
+            <div class="col-12">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <td>Position</td>
+                        <td>Artist</td>
+                        <td>Track</td>
+                        <td>Album</td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr id="bestentry">
+                        <td class="position"></td>
+                        <td class="artist_name"></td>
+                        <td class="name"></td>
+                        <td class="album_name"></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <h3>Best exit :</h3>
+            </div>
+            <div class="col-12">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <td>Position</td>
+                        <td>Artist</td>
+                        <td>Track</td>
+                        <td>Album</td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr id="bestexit">
+                        <td class="position"></td>
+                        <td class="artist_name"></td>
+                        <td class="name"></td>
+                        <td class="album_name"></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <h3>Chart :</h3>
+            </div>
+            <div class="col-12">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <td>Position</td>
+                        <td>Progression</td>
+                        <td>Artist</td>
+                        <td>Track</td>
+                        <td>Album</td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr id="chartentry">
+                        <td class="position"></td>
+                        <td class="move"></td>
+                        <td class="artist_name"></td>
+                        <td class="name"></td>
+                        <td class="album_name"></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="visible">
+    Waiting for webservice
+</div>
+<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<script src="jamchart.js"></script>
+</body>
+</html>

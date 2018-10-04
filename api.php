@@ -89,7 +89,6 @@ $app->get('/rest/data', function(Request $request, Response $response, array $pa
         return intval($row['id']);
     }, $rows);
     $ids[] = $best_entry->id;
-    $ids[] = $best_exit->id;
     $rows = $db->select(
         'tracks',
         [
@@ -137,6 +136,52 @@ $app->get('/rest/data', function(Request $request, Response $response, array $pa
         $track = \JamChart\TrackObject::build($row);
         $tracks[intval($row['id'])] = $track;
     }
+
+    $rows = $db->select(
+        'tracks',
+        [
+            'date_retrieved',
+            'id',
+            'name',
+            'duration',
+            'artist_id',
+            'artist_name',
+            'artist_idstr',
+            'album_name',
+            'album_id',
+            'license_ccurl',
+            'position',
+            'release_date',
+            'album_image',
+            'audio',
+            'audio_download',
+            'pro_url',
+            'short_url',
+            'share_url',
+            'image',
+            'vocal_instrumental',
+            'lang',
+            'gender',
+            'acoustic_electric',
+            'speed',
+            'downloads',
+            'listened',
+            'playlisted',
+            'favorited',
+            'likes',
+            'dislikes',
+            'avgnote',
+            'notes',
+            'date_created',
+        ],
+        [
+            'date_retrieved' => $previous_date,
+            'id' => $best_exit->id,
+        ]
+    );
+    $row = $rows[0];
+    $track = \JamChart\TrackObject::build($row);
+    $tracks[intval($row['id'])] = $track;
 
     return $response->withJson(
         [
