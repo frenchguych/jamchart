@@ -5,13 +5,7 @@ require 'vendor/autoload.php';
 use Medoo\Medoo;
 use JamChart\CurlHelper;
 
-$database = new Medoo([
-    'database_type' => 'mysql',
-    'database_name' => 'jamchart',
-    'server' => 'localhost',
-    'username' => 'jamchart',
-    'password' => 'jamchart'
-]);
+$database = include("config/db.php");
 
 $curl = new CurlHelper();
 
@@ -21,7 +15,7 @@ $then->sub(new DateInterval("P3M"));
 $datebetween = $then->format('Y-m-d') . "_" . $now->format('Y-m-d');
 
 $params = [
-    "client_id" => "d13ce508",
+    "client_id" => include("config/jamendo.php"),
     "datebetween" => $datebetween,
     "order" => "releasedate_desc",
     "type" => "single+albumtrack",
@@ -32,12 +26,6 @@ $params = [
 ];
 
 $url = "https://api.jamendo.com/v3.0/tracks/";
-
-/*
-$database->query("truncate tracks");
-$database->query("truncate stats");
-$database->query("truncate tags");
-*/
 
 $offset = 0;
 $calls = 0;

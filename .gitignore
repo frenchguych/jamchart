@@ -1,2 +1,6 @@
 vendor/
 composer.phar
+.idea/
+phpinfo.php
+config/db.php
+config/jamendo.php

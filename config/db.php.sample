@@ -1,0 +1,12 @@
+<?php
+use Medoo\Medoo;
+
+$db = new Medoo([
+    'database_type' => 'mysql',
+    'database_name' => 'jamchart',
+    'server' => 'localhost',
+    'username' => 'jamchart',
+    'password' => 'jamchart'
+]);
+
+return $db;
